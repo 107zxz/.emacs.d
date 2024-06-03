@@ -17,7 +17,9 @@
  '(package-selected-packages
    '(company rustic rust-mode quelpa-use-package flycheck xah-fly-keys lsp-mode corfu timu-rouge-theme meow emms consult-org-roam org-roam orderless consult marginalia vertico dirvish lua-mode avy exec-path-from-shell yaml-mode pyvenv async magit markdown-mode))
  '(python-shell-completion-native-enable nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(menu-bar-mode nil)
+ )
 
  
 (custom-set-faces
@@ -49,6 +51,7 @@
 
 ;; Xah
 (require 'setup-xah)
+(require 'setup-xah-binds)
 
 ;; Devil
 ;; (require 'setup-devil)
