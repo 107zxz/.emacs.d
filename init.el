@@ -7,19 +7,22 @@
  '(custom-enabled-themes '(timu-rouge))
  '(custom-safe-themes
    '("622034e2b06b087d3e950652c93e465f3df6eab50bfdceddaa78077487e9bc24" default))
+ '(default-frame-alist '((cursor-type . box) (menu-bar) (fullscreen . fullboth)))
  '(display-line-numbers t)
+ '(display-time-mode t)
  '(emms-info-functions '(emms-info-native))
  '(emms-player-list '(emms-player-mpv))
  '(emms-playlist-update-track-function 'emms-playlist-mode-update-track-function)
+ '(global-hl-line-mode t)
  '(inhibit-startup-screen t)
  '(ivy-mode t)
+ '(menu-bar-mode nil)
  '(org-roam-db-autosync-mode t)
  '(package-selected-packages
    '(company rustic rust-mode quelpa-use-package flycheck xah-fly-keys lsp-mode corfu timu-rouge-theme meow emms consult-org-roam org-roam orderless consult marginalia vertico dirvish lua-mode avy exec-path-from-shell yaml-mode pyvenv async magit markdown-mode))
  '(python-shell-completion-native-enable nil)
- '(tool-bar-mode nil)
- '(menu-bar-mode nil)
- )
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
 
  
 (custom-set-faces
