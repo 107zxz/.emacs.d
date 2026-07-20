@@ -88,9 +88,9 @@
 
 ;;; Programming Languages
 ;; (use-package zig-mode
-  :ensure t)
+;;  :ensure t)
 
 ;; Java
 ;; (use-package mvn
-  :ensure t)
+;;  :ensure t)
 
