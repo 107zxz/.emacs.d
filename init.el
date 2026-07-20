@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -7,7 +8,9 @@
    '("3061706fa92759264751c64950df09b285e3a2d3a9db771e99bcbb2f9b470037"
      "5f128efd37c6a87cd4ad8e8b7f2afaba425425524a68133ac0efd87291d05874"
      default))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(company doom-themes exec-path-from-shell magit orderless parrot
+	     vertico xah-fly-keys)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,7 +25,11 @@
   (tool-bar-mode 0)
   (menu-bar-mode 0)
   (scroll-bar-mode 0)
+  (setq make-backup-files nil)
   (setq inhibit-splash-screen t))
+
+(use-package ansi-color
+  :hook (compilation-filter . ansi-color-compilation-filter))
 
 (use-package package
   :config
@@ -48,7 +55,8 @@
   (xah-fly-keys t)
   (define-key xah-fly-command-map (kbd "SPC / m") 'magit-status)
   (define-key xah-fly-command-map (kbd "SPC w f") 'project-find-file)
-  (define-key xah-fly-command-map (kbd "C") (lambda () ('save-buffer) ('recompile))))
+  (define-key xah-fly-command-map (kbd "C") #'(lambda () ('save-buffer) ('recompile)))
+  (define-key xah-fly-command-map (kbd "C") (lambda () (interactive) (save-buffer) (recompile))))
 
 (use-package vertico
   :ensure t
