@@ -9,8 +9,9 @@
      "5f128efd37c6a87cd4ad8e8b7f2afaba425425524a68133ac0efd87291d05874"
      default))
  '(package-selected-packages
-   '(company doom-themes exec-path-from-shell magit orderless parrot
-	     vertico xah-fly-keys)))
+   '(cmake-mode company direnv doom-themes exec-path-from-shell glsl-mode
+		magit nhexl-mode nix-mode orderless parrot vertico
+		xah-fly-keys)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,15 +26,24 @@
   (tool-bar-mode 0)
   (menu-bar-mode 0)
   (scroll-bar-mode 0)
+  (display-line-numbers-mode 1)
   (setq make-backup-files nil)
-  (setq inhibit-splash-screen t))
-
-(use-package ansi-color
-  :hook (compilation-filter . ansi-color-compilation-filter))
+  (setq inhibit-splash-screen t)
+  (add-to-list 'auto-mode-alist '("\\.zs\\'" . c++-mode)))
 
 (use-package package
   :config
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  :ensure t)
+
+(use-package ansi-color
+ :hook (compilation-filter . ansi-color-compilation-filter)
+ :ensure t)
+
+(use-package direnv
+  :config
+  (direnv-mode)
+  :ensure t)
 
 (use-package parrot
   :ensure t
@@ -93,6 +103,14 @@
   :ensure t
   :config
   (which-key-mode))
+
+(use-package nix-mode
+  :mode "\\.nix\\'"
+  :ensure t)
+
+(use-package cmake-mode
+  :ensure t
+  :mode ("CMakeLists\\.txt\\'" "\\.cmake\\'"))
 
 ;;; Programming Languages
 ;; (use-package zig-mode
